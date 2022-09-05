@@ -94,26 +94,26 @@ namespace SonatafyChallengeTest
             Assert.Equal(0.60m, item.TaxValue);
         }
 
-        //[Fact]
-        //public void TaxValueShouldBeRoundedUpToTheNearestFiveCents()
-        //{
-        //    /* NORMAL Tax Items */
-        //    var itemNormalTax = MockItemWithNormalTax();
-        //    itemNormalTax.Value = 14.99m;
+        [Fact]
+        public void TaxValueShouldBeRoundedUpToTheNearestFiveCents()
+        {
+            /* NORMAL Tax Items */
+            var itemNormalTax = MockItemWithNormalTax();
+            itemNormalTax.Value = 14.99m;
 
-        //    Assert.Equal(1.50m, itemNormalTax.TaxValue);
-        //    Assert.NotEqual(1.45m, itemNormalTax.TaxValue);
-        //    Assert.NotEqual(1.49m, itemNormalTax.TaxValue);
-        //    Assert.NotEqual(1.499m, itemNormalTax.TaxValue);
+            Assert.Equal(1.50m, itemNormalTax.TaxValue);
 
-        //    /* IMPORT Tax Items */
-        //    var itemImportTax = MockItemWithImportTax();
-        //    itemImportTax.Value = 47.50m;
+            /* IMPORTED NORMAL Tax Items */
+            var importedItemNormalTax = MockImportItemWithNormalTax();
+            importedItemNormalTax.Value = 27.99m;
 
-        //    Assert.Equal(2.40m, itemImportTax.TaxValue);
-        //    Assert.NotEqual(2.35m, itemImportTax.TaxValue);
-        //    Assert.NotEqual(2.37m, itemImportTax.TaxValue);
-        //    Assert.NotEqual(2.375m, itemImportTax.TaxValue);
-        //}
+            Assert.Equal(4.20m, importedItemNormalTax.TaxValue);
+
+            /* IMPORTED EXEMPT Tax Items */
+            var importedItemExemptTax = MockImportItemWithExemptTax();
+            importedItemExemptTax.Value = 11.25m;
+
+            Assert.Equal(0.60m, importedItemExemptTax.TaxValue);
+        }
     }
 }

@@ -16,9 +16,7 @@ namespace SonatafyChallenge
         public string GetStringRepresentation()
         {
             if (Items.Count == 0)
-            {
                 return "This sales receipt doesn't have any items.";
-            }
 
             var salesReceiptString = "";
             foreach (var itemsGrouped in Items.GroupBy(x => x.Name))
@@ -27,9 +25,7 @@ namespace SonatafyChallenge
 
                 var itemsGroupedCount = itemsGrouped.Count();
                 if (itemsGroupedCount > 1)
-                {
                     salesReceiptString += $" ({itemsGroupedCount} @ {itemsGrouped.First().TotalValue:0.00})";
-                }
 
                 salesReceiptString += "\n";
             }

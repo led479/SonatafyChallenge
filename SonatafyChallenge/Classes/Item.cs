@@ -11,7 +11,7 @@ namespace SonatafyChallenge
         public string Name { get; set; }
         public decimal Value { get; set; }
         public TaxEnum TaxEnum { get; set; }
-        public bool IsImport { get; set; }
+        public bool IsImported { get; set; }
 
         public decimal TaxValue
         {
@@ -20,11 +20,8 @@ namespace SonatafyChallenge
                 var taxValue = Value * TaxHelper.TaxPercentage(TaxEnum);
                 taxValue = TaxHelper.RoundTax(taxValue);
 
-                if (IsImport)
-                {
-                    taxValue += Value * 0.05m;
-                    taxValue = TaxHelper.RoundTax(taxValue);
-                }
+                if (IsImported)
+                    taxValue += TaxHelper.RoundTax(Value * 0.05m);
 
                 return taxValue;
             }

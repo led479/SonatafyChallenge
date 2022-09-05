@@ -15,34 +15,34 @@ namespace SonatafyChallengeTest
                 {
                     Name = "Imported bottle of perfume",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = true,
+                    IsImported = true,
                     Value = 27.99m
                 },
                 new Item
                 {
                     Name = "Bottle of perfume",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 18.99m
                 },
                 new Item
                 {
                     Name = "Packet of headache pills",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 9.75m
                 },
                 new Item
                 {
                     Name = "Imported box of chocolates",
-                    IsImport = true,
+                    IsImported = true,
                     TaxEnum = TaxEnum.EXEMPT,
                     Value = 11.25m
                 },
                 new Item
                 {
                     Name = "Imported box of chocolates",
-                    IsImport = true,
+                    IsImported = true,
                     TaxEnum = TaxEnum.EXEMPT,
                     Value = 11.25m
                 },
@@ -111,28 +111,28 @@ namespace SonatafyChallengeTest
                 {
                     Name = "Book",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 12.49m
                 },
                 new Item
                 {
                     Name = "Book",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 12.49m
                 },
                 new Item
                 {
                     Name = "Music CD",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 14.99m
                 },
                 new Item
                 {
                     Name = "Chocolate bar",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 0.85m
                 },
             };
@@ -155,14 +155,14 @@ namespace SonatafyChallengeTest
                 {
                     Name = "Imported box of chocolates",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = true,
+                    IsImported = true,
                     Value = 10.00m
                 },
                 new Item
                 {
                     Name = "Imported bottle of perfume",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = true,
+                    IsImported = true,
                     Value = 47.50m
                 },
             };
@@ -184,34 +184,34 @@ namespace SonatafyChallengeTest
                 {
                     Name = "Imported bottle of perfume",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = true,
+                    IsImported = true,
                     Value = 27.99m
                 },
                 new Item
                 {
                     Name = "Bottle of perfume",
                     TaxEnum = TaxEnum.NORMAL,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 18.99m
                 },
                 new Item
                 {
                     Name = "Packet of headache pills",
                     TaxEnum = TaxEnum.EXEMPT,
-                    IsImport = false,
+                    IsImported = false,
                     Value = 9.75m
                 },
                 new Item
                 {
                     Name = "Imported box of chocolates",
-                    IsImport = true,
+                    IsImported = true,
                     TaxEnum = TaxEnum.EXEMPT,
                     Value = 11.25m
                 },
                 new Item
                 {
                     Name = "Imported box of chocolates",
-                    IsImport = true,
+                    IsImported = true,
                     TaxEnum = TaxEnum.EXEMPT,
                     Value = 11.25m
                 },

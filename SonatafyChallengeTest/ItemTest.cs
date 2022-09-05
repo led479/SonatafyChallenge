@@ -12,7 +12,7 @@ namespace SonatafyChallengeTest
             {
                 Name = "Music CD",
                 TaxEnum = TaxEnum.NORMAL,
-                IsImport = false
+                IsImported = false
             };
         }
 
@@ -22,7 +22,7 @@ namespace SonatafyChallengeTest
             {
                 Name = "Book",
                 TaxEnum = TaxEnum.EXEMPT,
-                IsImport = false
+                IsImported = false
             };
         }
 
@@ -32,7 +32,7 @@ namespace SonatafyChallengeTest
             {
                 Name = "Imported bottle of perfume",
                 TaxEnum = TaxEnum.NORMAL,
-                IsImport = true
+                IsImported = true
             };
         }
 
@@ -42,7 +42,7 @@ namespace SonatafyChallengeTest
             {
                 Name = "Imported box of chocolates",
                 TaxEnum = TaxEnum.EXEMPT,
-                IsImport = true
+                IsImported = true
             };
         }
 

@@ -9,7 +9,6 @@ namespace SonatafyChallenge
     public enum TaxEnum
     {
         NORMAL,
-        EXEMPT,
-        IMPORT
+        EXEMPT
     }
 }

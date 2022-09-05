@@ -1,0 +1,119 @@
+using SonatafyChallenge;
+using System;
+using Xunit;
+
+namespace SonatafyChallengeTest
+{
+    public class ItemTest
+    {
+        private Item MockItemWithNormalTax()
+        {
+            return new Item
+            {
+                Name = "Music CD",
+                TaxEnum = TaxEnum.NORMAL,
+                IsImport = false
+            };
+        }
+
+        private Item MockItemWithExemptTax()
+        {
+            return new Item
+            {
+                Name = "Book",
+                TaxEnum = TaxEnum.EXEMPT,
+                IsImport = false
+            };
+        }
+
+        private Item MockImportItemWithNormalTax()
+        {
+            return new Item
+            {
+                Name = "Imported bottle of perfume",
+                TaxEnum = TaxEnum.NORMAL,
+                IsImport = true
+            };
+        }
+
+        private Item MockImportItemWithExemptTax()
+        {
+            return new Item
+            {
+                Name = "Imported box of chocolates",
+                TaxEnum = TaxEnum.EXEMPT,
+                IsImport = true
+            };
+        }
+
+        [Fact]
+        public void TotalValueShouldReturnTaxValuePlusValue()
+        {
+            var item = MockItemWithNormalTax();
+            item.Value = 14.99m;
+
+            Assert.Equal(14.99m, item.Value);
+            Assert.Equal(1.5m, item.TaxValue);
+            Assert.Equal(14.99m + 1.5m, item.TotalValue);
+        }
+
+        [Fact]
+        public void ItemsWithExemptTaxShouldHaveTaxValueAsZero()
+        {
+            var item = MockItemWithExemptTax();
+            item.Value = 12.49m;
+
+            Assert.Equal(0.00m, item.TaxValue);
+        }
+
+        [Fact]
+        public void ItemsWithNormalTaxShouldHaveTaxValueAsTenPercent()
+        {
+            var item = MockItemWithNormalTax();
+            item.Value = 14.99m;
+
+            Assert.Equal(1.50m, item.TaxValue);
+        }
+
+        [Fact]
+        public void ImportItemsWithNormalTaxShouldHaveTaxValueAsTenPercentPlusFivePercent()
+        {
+            var item = MockImportItemWithNormalTax();
+            item.Value = 27.99m;
+
+            Assert.Equal(4.20m, item.TaxValue);
+        }
+
+
+        [Fact]
+        public void ImportItemsWithExemptTaxShouldHaveTaxValueAsZeroPlusFivePercent()
+        {
+            var item = MockImportItemWithExemptTax();
+            item.Value = 11.25m;
+
+            Assert.Equal(0.60m, item.TaxValue);
+        }
+
+        //[Fact]
+        //public void TaxValueShouldBeRoundedUpToTheNearestFiveCents()
+        //{
+        //    /* NORMAL Tax Items */
+        //    var itemNormalTax = MockItemWithNormalTax();
+        //    itemNormalTax.Value = 14.99m;
+
+        //    Assert.Equal(1.50m, itemNormalTax.TaxValue);
+        //    Assert.NotEqual(1.45m, itemNormalTax.TaxValue);
+        //    Assert.NotEqual(1.49m, itemNormalTax.TaxValue);
+        //    Assert.NotEqual(1.499m, itemNormalTax.TaxValue);
+
+        //    /* IMPORT Tax Items */
+        //    var itemImportTax = MockItemWithImportTax();
+        //    itemImportTax.Value = 47.50m;
+
+        //    Assert.Equal(2.40m, itemImportTax.TaxValue);
+        //    Assert.NotEqual(2.35m, itemImportTax.TaxValue);
+        //    Assert.NotEqual(2.37m, itemImportTax.TaxValue);
+        //    Assert.NotEqual(2.375m, itemImportTax.TaxValue);
+        //}
+    }
+}

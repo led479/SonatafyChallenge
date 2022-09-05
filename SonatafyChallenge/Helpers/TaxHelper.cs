@@ -14,9 +14,14 @@ namespace SonatafyChallenge
             {
                 case TaxEnum.NORMAL: return 0.10m;
                 case TaxEnum.EXEMPT: return 0m;
-                case TaxEnum.IMPORT: return 0.05m;
                 default: throw new ApplicationException($"TaxEnum {taxEnum} doesn't have a valid value");
             }
+        }
+
+        public static decimal RoundTax(decimal value)
+        {
+            /* Round the value up to the nearest 5 cents */
+            return Math.Ceiling(value * 20) / 20;
         }
 
     }

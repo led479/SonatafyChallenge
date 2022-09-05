@@ -29,7 +29,7 @@ namespace SonatafyChallenge
                 salesReceiptString += "\n";
             }
 
-            salesReceiptString += $"Sales Taxes: {SalesTaxes:0.00} \n";
+            salesReceiptString += $"Sales Taxes: {SalesTaxes:0.00}\n";
             salesReceiptString += $"Total: {Total:0.00}";
 
             return salesReceiptString;
